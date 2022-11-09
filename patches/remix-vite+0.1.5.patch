@@ -1,0 +1,39 @@
+diff --git a/node_modules/remix-vite/cli.js b/node_modules/remix-vite/cli.js
+index 38e7858..29d3379 100644
+--- a/node_modules/remix-vite/cli.js
++++ b/node_modules/remix-vite/cli.js
+@@ -62,7 +62,7 @@ var resolveRelativeRouteFilePath = (route, config2) => {
+   return fullPath;
+ };
+ var resolveFSPath = (filePath) => {
+-  return `/@fs${filePath}`;
++  return `/@fs/${filePath.replace(/\\/g, '/')}`;
+ };
+ var getRoutesByFile = async () => {
+   const config2 = await getRemixConfig();
+diff --git a/node_modules/remix-vite/lib.esm.js b/node_modules/remix-vite/lib.esm.js
+index 6339ff9..0d30afc 100644
+--- a/node_modules/remix-vite/lib.esm.js
++++ b/node_modules/remix-vite/lib.esm.js
+@@ -68,7 +68,7 @@ var resolveRelativeRouteFilePath = (route, config) => {
+   return fullPath;
+ };
+ var resolveFSPath = (filePath) => {
+-  return `/@fs${filePath}`;
++  return `/@fs/${filePath.replace(/\\/g, '/')}`;
+ };
+ var getRoutesByFile = async () => {
+   const config = await getRemixConfig();
+diff --git a/node_modules/remix-vite/lib.js b/node_modules/remix-vite/lib.js
+index 6339ff9..0d30afc 100644
+--- a/node_modules/remix-vite/lib.js
++++ b/node_modules/remix-vite/lib.js
+@@ -68,7 +68,7 @@ var resolveRelativeRouteFilePath = (route, config) => {
+   return fullPath;
+ };
+ var resolveFSPath = (filePath) => {
+-  return `/@fs${filePath}`;
++  return `/@fs/${filePath.replace(/\\/g, '/')}`;
+ };
+ var getRoutesByFile = async () => {
+   const config = await getRemixConfig();
