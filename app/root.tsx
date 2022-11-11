@@ -23,30 +23,8 @@ export default function App() {
 			<body>
 				<Outlet />
 				<ScrollRestoration />
-				<ViteScripts />
 				<Scripts />
 			</body>
 		</html>
 	);
 }
-
-const ViteScripts =
-	process.env.NODE_ENV !== 'development'
-		? () => null
-		: () => {
-				return (
-					<>
-						<script type='module' src='/@vite/client' />
-						<script
-							type='module'
-							dangerouslySetInnerHTML={{
-								__html: `import RefreshRuntime from '/@react-refresh'
-  RefreshRuntime.injectIntoGlobalHook(window)
-  window.$RefreshReg$ = () => {}
-  window.$RefreshSig$ = () => (type) => type
-  window.__vite_plugin_react_preamble_installed__ = true`,
-							}}
-						/>
-					</>
-				);
-		  };

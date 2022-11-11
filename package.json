@@ -3,7 +3,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"build": "remix build",
-		"dev": "cross-env NODE_ENV=development remix-vite",
+		"dev": "remix-vite",
 		"start": "remix-serve build",
 		"postinstall": "patch-package"
 	},
@@ -23,7 +23,7 @@
 		"cross-env": "^7.0.3",
 		"eslint": "^8.23.1",
 		"patch-package": "^6.5.0",
-		"remix-vite": "^0.1.5",
+		"remix-vite": "^0.2.2",
 		"typescript": "^4.7.4"
 	},
 	"engines": {
